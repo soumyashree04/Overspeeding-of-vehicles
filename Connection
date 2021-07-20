@@ -1,0 +1,2 @@
+One of the three pins of the IR sensor 1 has been connected to Arduino's Digital I/O pin 2 and one of the three pins of the IR sensor 2 has been connected to Arduino's Digital I/O pin 3 whereas the second pin of both the sensors has been connected to the ground through breadboard and the tird pin of both the sensors has been connected to the 5V supply to breadboard through jumper wires.
+Next is the buzzer whose shorter leg has been grounded  and the other end has been connected to the resistor  which is connected to Arduino's Digital I/O pin 13.
