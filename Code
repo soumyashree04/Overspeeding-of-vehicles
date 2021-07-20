@@ -1,0 +1,35 @@
+int IR1=2;
+int IR2=3;
+int buzzer=13;
+float velocity;
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(IR1,INPUT);
+  pinMode(IR2,INPUT);
+  pinMode(buzzer,OUTPUT);
+}
+void loop()
+{
+  unsigned long t1=0;
+  unsigned long t2=0;
+  if (digitalRead(IR1)==1)
+  {
+  t1=millis();
+  }
+  if(digitalRead(IR2)==1)
+  {
+  t2=millis();
+  }
+  velocity=t2-t1;
+  velocity=velocity/1000; //convert millisecond to second
+  if(velocity!=0)
+  {
+  velocity=(0.1/velocity)*3.6;//v=d/t
+  Serial.println(velocity);
+  if(velocity>0.20)
+  digitalWrite(buzzer,HIGH);
+  else
+  digitalWrite(buzzer,LOW);
+  }
+}
